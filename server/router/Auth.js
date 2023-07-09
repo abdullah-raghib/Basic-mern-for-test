@@ -206,6 +206,14 @@ const User = require('../models/userSchema');
 router.get('/',(req,res)=>{
     res.send("welcome to the home Mern from app");
 })
+router.get('/data', async (req,res)=>{
+        try {
+            const data = await User.find({});
+            res.send(data);
+          } catch (error) {
+            console.error(error);
+          }
+})
 
 router.post("/api/login", (req, res)=>{
     const {email, password} = req.body;
