@@ -207,15 +207,15 @@ router.get('/',(req,res)=>{
     res.send("welcome to the home Mern from app");
 })
 
-// router.post("/api/login", (req, res)=>{
-//     const {email, password} = req.body;
-//     console.log({email,password})
-    // const document = new User({email, password});
+router.post("/api/login", (req, res)=>{
+    const {email, password} = req.body;
+    console.log({email,password})
+    const document = new User({email, password});
 
-    // document.save().then((result)=>{
-    //     console.log("data saved");
-    // }).catch((err)=> console.log(err));
-// })
+    document.save().then((result)=>{
+        console.log("data saved");
+    }).catch((err)=> console.log(err));
+})
 // router.get('/logout', (req, res) => {
 //     res.clearCookie('jwtoken'); 
 //     res.redirect('/');
