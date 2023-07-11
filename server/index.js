@@ -14,7 +14,7 @@ app.use('/', router)
 dotenv.config({ path: "./config.env" });
 
 require('./db/conn');
-
+// port
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
